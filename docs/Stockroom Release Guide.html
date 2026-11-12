@@ -1,0 +1,937 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Stockroom Release Guide</title>
+    <style>
+      @page {
+        size: A4;
+        margin: 19mm;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        background: #eceee9;
+        color: #202420;
+        font:
+          15px/1.55 'Segoe UI',
+          Arial,
+          sans-serif;
+      }
+      main {
+        max-width: 880px;
+        margin: 32px auto;
+        background: white;
+        padding: 48px 62px;
+      }
+      h1,
+      h2,
+      h3 {
+        color: #000;
+        line-height: 1.18;
+        break-after: avoid;
+      }
+      h1 {
+        font-size: 34px;
+        font-weight: 600;
+        letter-spacing: -1px;
+        margin: 0 0 15px;
+      }
+      h2 {
+        font-size: 23px;
+        margin: 34px 0 15px;
+      }
+      h3 {
+        font-size: 17px;
+        margin: 25px 0 10px;
+      }
+      p {
+        margin: 0 0 13px;
+      }
+      a {
+        color: #244e3c;
+      }
+      ul,
+      ol {
+        padding-left: 23px;
+        margin: 10px 0 18px;
+      }
+      li {
+        margin: 6px 0;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 17px 0 24px;
+        font-size: 13px;
+      }
+      th,
+      td {
+        border: 1px solid #d9d9d9;
+        padding: 10px 12px;
+        text-align: left;
+        vertical-align: middle;
+      }
+      th {
+        background: #e9eef1;
+        color: #000;
+        font-weight: 600;
+      }
+      tr {
+        break-inside: avoid;
+      }
+      .meta {
+        font-size: 12px;
+        color: #61665f;
+        margin-bottom: 28px;
+      }
+      pre {
+        white-space: pre-wrap;
+        overflow-wrap: anywhere;
+        padding: 12px;
+        background: #f2f4ed;
+      }
+      .path {
+        font-family: Consolas, monospace;
+        overflow-wrap: anywhere;
+        font-size: 12px;
+      }
+      code {
+        font-family: Consolas, monospace;
+        font-size: 0.88em;
+      }
+      section {
+        margin-bottom: 35px;
+      }
+      .page-label {
+        font-size: 11px;
+        color: #777;
+        margin-bottom: 18px;
+      }
+      strong {
+        font-weight: 600;
+      }
+      .small {
+        font-size: 12px;
+        color: #5d6559;
+      }
+      .intro {
+        font-size: 17px;
+        line-height: 1.6;
+      }
+      .note {
+        margin-top: 22px;
+      }
+      .signature {
+        margin-top: 30px;
+        font-size: 12px;
+        color: #6f746c;
+      }
+      @media print {
+        body {
+          background: white;
+          font-size: 10.5pt;
+          line-height: 1.45;
+        }
+        main {
+          margin: 0;
+          padding: 0;
+          max-width: none;
+        }
+        section {
+          break-after: page;
+          margin: 0;
+        }
+        section:last-child {
+          break-after: auto;
+        }
+        h1 {
+          font-size: 27pt;
+        }
+        h2 {
+          font-size: 18pt;
+          margin-top: 21px;
+        }
+        h3 {
+          font-size: 12pt;
+          margin-top: 18px;
+        }
+        table {
+          font-size: 9pt;
+          margin: 13px 0 18px;
+        }
+        th,
+        td {
+          padding: 7px 9px;
+        }
+        p {
+          margin-bottom: 10px;
+        }
+        li {
+          margin: 4px 0;
+        }
+        .meta {
+          margin-bottom: 20px;
+        }
+        .intro {
+          font-size: 12pt;
+        }
+        .page-label {
+          font-size: 8pt;
+        }
+        .small,
+        .path {
+          font-size: 8.5pt;
+        }
+        a {
+          color: #202420;
+          text-decoration: none;
+        }
+      }
+      @media (max-width: 700px) {
+        main {
+          padding: 28px 22px;
+          margin: 0;
+        }
+        h1 {
+          font-size: 29px;
+        }
+        table {
+          font-size: 12px;
+        }
+        th,
+        td {
+          padding: 8px;
+        }
+        body {
+          font-size: 14px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <section>
+        <p class="page-label">RELEASE GUIDE · OVERVIEW</p>
+        <h1>Stockroom Release Guide</h1>
+        <p class="meta">Increment 2 · Version 0.2.0 · 12 November 2026</p>
+        <p class="intro">
+          Stockroom is a fictional electronics and workspace store built for your QA portfolio. This
+          release lets customers browse, use a cart, place orders, and view their own purchase
+          history. Operations staff can inspect inventory. It includes real login sessions and APIs,
+          so you can practise UI, API, and hybrid testing.
+        </p>
+        <p>
+          This guide records what is available, the rules it follows, and what you can test. Future
+          increments will add dated release entries and their own expected behaviour. It contains no
+          test code.
+        </p>
+        <h2>Release history</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Increment</th>
+              <th>Implemented behaviour</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>
+                Login and logout, customer and staff permissions, catalog search and filters,
+                sorting, pagination, product details, read-only staff inventory, and Swagger API
+                documentation.
+              </td>
+              <td>
+                QA complete: 144 UI, API, and hybrid executions passed (reported by the learner).
+              </td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>
+                Customer cart, server totals, atomic order placement, duplicate protection,
+                confirmation, and My orders.
+              </td>
+              <td>Delivered for independent QA.</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>Local payment simulation, then a later Stripe test integration.</td>
+              <td>Planned only; not implemented.</td>
+            </tr>
+          </tbody>
+        </table>
+        <h2>Open the application</h2>
+        <ol>
+          <li>Open the Stockroom application repository folder.</li>
+          <li>
+            Double-click <strong>Start Stockroom.cmd</strong>. Keep its terminal window open while
+            using the application.
+          </li>
+          <li>Open <a href="http://127.0.0.1:3000">http://127.0.0.1:3000</a> in your browser.</li>
+          <li>
+            Find your generated accounts and passwords in
+            <span class="path">.local/demo-accounts.txt</span>. This local file is excluded from
+            Git.
+          </li>
+          <li>
+            Sign in with a customer or staff account. To stop the application, press Ctrl+C in its
+            terminal.
+          </li>
+        </ol>
+        <p>
+          Use <strong>127.0.0.1</strong> consistently. Using localhost instead gives the browser a
+          different application address and can cause sign-in protection to reject a request.
+        </p>
+        <h2>Scope of this release</h2>
+        <p>
+          All products, names, and accounts are fictional. The store uses English and EUR. Customers
+          can now use a cart and place orders. Payments, registration, password recovery, shipping,
+          cancellations, and staff order processing are not available in this increment.
+        </p>
+        <p>
+          The learner maintains and publishes the separate Playwright TypeScript automation
+          framework. Application delivery does not add or modify those tests. New regression tests
+          are written manually by the learner with explanations in the QA chat.
+        </p>
+      </section>
+      <section>
+        <p class="page-label">RELEASE GUIDE · ACCOUNTS</p>
+        <h2>Accounts and access</h2>
+        <p>
+          There are two customer accounts and one operations staff account. Their passwords are
+          generated separately for this installation. Signing in as one role must never grant the
+          permissions of another.
+        </p>
+        <table>
+          <thead>
+            <tr>
+              <th>Account</th>
+              <th>Allowed behaviour</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>customer@stockroom.test<br />second@stockroom.test</td>
+              <td>
+                Browse and filter the catalog, read product details, use the cart, place orders,
+                view your own orders, and sign out.
+              </td>
+            </tr>
+            <tr>
+              <td>staff@stockroom.test</td>
+              <td>
+                Use the catalog and product details, plus the read-only inventory page containing
+                supplier and unit cost information.
+              </td>
+            </tr>
+            <tr>
+              <td>Signed-out visitor</td>
+              <td>
+                View the sign-in page and API reference. Protected pages lead to sign-in; protected
+                APIs reject access.
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <h3>Sign-in rules</h3>
+        <ul>
+          <li>
+            Email and password are required. The browser checks an email's format before submitting
+            the form.
+          </li>
+          <li>
+            Email is case-insensitive, and spaces around it are ignored. Passwords are
+            case-sensitive and are not trimmed.
+          </li>
+          <li>
+            The Show or Hide control changes password visibility. It does not change the submitted
+            password.
+          </li>
+          <li>
+            Successful sign-in opens the catalog. An already signed-in visitor opening the sign-in
+            page returns to the catalog.
+          </li>
+          <li>
+            A wrong password and an unknown email produce the same incorrect-credentials message.
+          </li>
+          <li>
+            After five unsuccessful attempts for the same email within 15 minutes, further attempts
+            are temporarily rejected. A successful login before that threshold clears that email's
+            failure count.
+          </li>
+          <li>
+            The local installation also permits at most 30 login attempts per minute across all
+            accounts. This protects the local service and may affect repeated testing.
+          </li>
+        </ul>
+        <h3>Session and sign-out rules</h3>
+        <p>
+          A session expires after 30 minutes without a request to a protected page or API, or after
+          eight hours in total. The next protected request after expiry is rejected. Simply keeping
+          a page open does not refresh a session. Closing the browser is not a substitute for
+          signing out.
+        </p>
+        <p>
+          Sign out ends the current browser session on the server and returns to sign-in. Reusing
+          its old session must fail. Other independently signed-in sessions are unaffected.
+        </p>
+        <h3>Permission boundaries</h3>
+        <p>
+          A customer sees no Inventory navigation link. Opening the inventory page directly shows an
+          access-denied message. Calling the inventory API directly as a customer returns status 403
+          and no inventory data. Customer catalog responses omit supplier and unit cost fields,
+          including when a staff member browses the catalog.
+        </p>
+        <p>
+          <strong>Things to explore:</strong> valid and invalid login, empty fields, password
+          visibility, email spacing and case, signing out, direct navigation, and different roles in
+          separate browser sessions.
+        </p>
+      </section>
+      <section>
+        <p class="page-label">RELEASE GUIDE · CATALOG</p>
+        <h2>Catalog and product rules</h2>
+        <p>
+          The starting dataset contains
+          <strong>24 products and 323 available units</strong> across Accessories, Audio, Computers,
+          Displays, and Workspace. Six products have low stock and three are out of stock. Product
+          counts refer to distinct products, not the number of available units.
+        </p>
+        <table>
+          <thead>
+            <tr>
+              <th>Control</th>
+              <th>Expected behaviour</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Search</td>
+              <td>
+                Enter part of a product name or its SKU and submit Search or press Enter. Matching
+                ignores letter case and spaces around the search. Maximum length is 100 characters.
+                Symbols such as % and _ are treated as normal text.
+              </td>
+            </tr>
+            <tr>
+              <td>Clear search</td>
+              <td>
+                Choose × (Clear search), or delete all search text, to remove the applied search
+                immediately without submitting again. Keep category, availability, sorting, and page
+                size; return to page 1. Results, count, summary, and address update together. With
+                default filters, this restores the first six of all 24 products. An earlier search
+                finishing late must not replace the cleared results. Use Tab to reach Clear search
+                and Enter or Space to activate it; focus returns to the search input.
+              </td>
+            </tr>
+            <tr>
+              <td>Category</td>
+              <td>
+                Choose one category or All categories. The selected category combines with the
+                submitted search and availability filter.
+              </td>
+            </tr>
+            <tr>
+              <td>Availability</td>
+              <td>
+                In stock includes any quantity above zero. Low stock means 1 to 5 inclusive. Out of
+                stock means zero. All availability includes everything.
+              </td>
+            </tr>
+            <tr>
+              <td>Sorting</td>
+              <td>
+                Sort by name, price, or stock, in either direction. Equal values use product ID in
+                ascending order, giving predictable results across pages.
+              </td>
+            </tr>
+            <tr>
+              <td>Pagination</td>
+              <td>
+                Six products per page by default. Choose 6, 12, or 24. Previous is unavailable on
+                the first page; Next is unavailable on the last.
+              </td>
+            </tr>
+            <tr>
+              <td>Changing criteria</td>
+              <td>
+                Submitting search or changing a filter, sort, or page size returns to page 1. Typing
+                nonempty search text still requires Search or Enter; clearing is immediate.
+              </td>
+            </tr>
+            <tr>
+              <td>Reset filters</td>
+              <td>
+                Clear search and filters, restore name A to Z, page 1, and six products per page.
+              </td>
+            </tr>
+            <tr>
+              <td>No matches</td>
+              <td>
+                Show a clear empty result message and a way to clear filters. Do not show unrelated
+                products.
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <p>
+          Active criteria are reflected in the address bar. Reloading that address preserves them.
+          The result count and range describe the filtered collection. A manually entered page
+          beyond the last page has no items and offers a return to the first page.
+        </p>
+        <h3>Useful starting examples</h3>
+        <p>
+          Searching <strong>SR-101</strong> finds Arc mechanical keyboard, priced at EUR 129.00 with
+          18 units. Combining Accessories with Low stock finds Dock USB C hub, priced at EUR 79.00
+          with 5 units. Clarity webcam is out of stock. These records let you compare catalog cards,
+          product details, and API responses.
+        </p>
+        <h3>Product details and staff inventory</h3>
+        <p>
+          Opening a product shows its name, SKU, category, price, description, availability,
+          quantity, and specifications. A missing product shows a not-found page. Prices use two
+          decimal places in the UI; APIs use whole cents, so 12900 means EUR 129.00.
+        </p>
+        <p>
+          Staff inventory supports the same search submission, immediate clearing, filtering,
+          sorting, and pagination. Its summary always describes the whole inventory, even when the
+          table is filtered. This release displays stock and supplier information without providing
+          editing controls.
+        </p>
+      </section>
+      <section>
+        <p class="page-label">RELEASE GUIDE · BASELINE API</p>
+        <h2>API access and testing opportunities</h2>
+        <p>
+          Open
+          <a href="http://127.0.0.1:3000/docs">http://127.0.0.1:3000/docs</a>
+          for Swagger. Expand an operation, choose Try it out, enter the required values, and
+          execute it. Requests use the same account cookies as the application in that browser.
+          Swagger automatically obtains the protection token needed for login and logout.
+        </p>
+        <table>
+          <thead>
+            <tr>
+              <th>Operation</th>
+              <th>Purpose</th>
+              <th>Main expected outcomes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>GET /api/auth/csrf</td>
+              <td>Prepare protection for a sign-in or sign-out request.</td>
+              <td>200 and a protection token.</td>
+            </tr>
+            <tr>
+              <td>POST /api/auth/login</td>
+              <td>Sign in with email and password.</td>
+              <td>
+                200 success; 401 wrong credentials; 422 invalid fields; 429 too many attempts.
+              </td>
+            </tr>
+            <tr>
+              <td>GET /api/auth/session</td>
+              <td>Read the current account.</td>
+              <td>200 signed in; 401 signed out or expired.</td>
+            </tr>
+            <tr>
+              <td>POST /api/auth/logout</td>
+              <td>End the current session.</td>
+              <td>204 success with no response body.</td>
+            </tr>
+            <tr>
+              <td>GET /api/products</td>
+              <td>Search, filter, sort, and page through products.</td>
+              <td>200 results; 401 signed out; 422 invalid query values.</td>
+            </tr>
+            <tr>
+              <td>GET /api/products/{id}</td>
+              <td>Read one product.</td>
+              <td>200 product; 404 missing product.</td>
+            </tr>
+            <tr>
+              <td>GET /api/categories</td>
+              <td>Read categories and their full-catalog counts.</td>
+              <td>200 category list.</td>
+            </tr>
+            <tr>
+              <td>GET /api/inventory</td>
+              <td>Read staff stock, cost, and supplier data.</td>
+              <td>200 staff; 403 customer; 401 signed out.</td>
+            </tr>
+            <tr>
+              <td>GET /api/health</td>
+              <td>Check whether the application responds.</td>
+              <td>200 and status ok.</td>
+            </tr>
+          </tbody>
+        </table>
+        <p>
+          Login and logout also reject requests with missing or invalid protection tokens or the
+          wrong Origin. Direct API clients must keep the cookies, obtain a token, and send both that
+          token and Origin matching the application address. The protection token changes after
+          successful login. Swagger explains the exact fields.
+        </p>
+        <h3>What to inspect in the Network tab</h3>
+        <p>
+          Open browser developer tools and select Network. Sign in, submit searches, or change
+          filters. Inspect the endpoint, method, status, query values, request payload, and
+          response. Product details are rendered by the server, so opening that page does not
+          require a separate browser product API request. You can still call the product API
+          independently.
+        </p>
+        <h3>Suggested testing approaches</h3>
+        <ul>
+          <li>
+            <strong>UI:</strong> check login, catalog controls, product navigation, empty results,
+            keyboard access, and staff navigation.
+          </li>
+          <li>
+            <strong>API:</strong> check invalid input, stock boundaries, totals, ordering, missing
+            products, permissions, and session behaviour.
+          </li>
+          <li>
+            <strong>Hybrid:</strong> authenticate through the API and use the same session in the
+            browser; compare a filtered API list with visible products; compare a product API
+            response with its details page.
+          </li>
+        </ul>
+        <p>
+          Increment 2 adds the cart and order APIs described below. Stock changes happen through
+          accepted orders; there is no web stock editor. Requests sent directly by Playwright's API
+          client run outside the browser page and will need their own request and response evidence
+          in your future framework.
+        </p>
+      </section>
+
+      <section>
+        <p class="page-label">INCREMENT 2 · CART AND ORDERS · 12 NOVEMBER 2026</p>
+        <h2>Shopping pages and behaviour</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Page</th>
+              <th>What the customer can do</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Catalog</td>
+              <td>
+                Choose Add to cart on an available product to add one unit. Adding the same product
+                increases its existing quantity. Out-of-stock buttons are unavailable. Search,
+                filtering, sorting, pagination, and immediate search clearing continue to work.
+              </td>
+            </tr>
+            <tr>
+              <td>Product details</td>
+              <td>
+                Choose a whole-number quantity from 1 to 99, then Add to cart. The resulting cart
+                quantity must not exceed current stock or 99 units for that product.
+              </td>
+            </tr>
+            <tr>
+              <td>Cart · /cart</td>
+              <td>
+                See current unit prices, quantities, line subtotals, available stock, and the total.
+                Edit a quantity and choose Update, or Remove a product. Quantity zero does not
+                remove an item: use Remove. Refresh cart retrieves the latest prices and stock. The
+                cart is saved on the server for this account, including after logout and sign-in.
+              </td>
+            </tr>
+            <tr>
+              <td>Confirmation</td>
+              <td>
+                Place order saves one order, updates stock, empties the cart, and opens a
+                confirmation with the order number and saved details. No payment is collected.
+              </td>
+            </tr>
+            <tr>
+              <td>My orders · /orders</td>
+              <td>
+                See only your own orders, newest first. The default page size is six. Open an order
+                number for its details. No orders and an out-of-range page have useful empty states.
+              </td>
+            </tr>
+            <tr>
+              <td>Order details · /orders/{id}</td>
+              <td>
+                See the saved product names, SKUs, quantities, unit prices, subtotals, total, date,
+                and Placed status. Changes to the catalog do not rewrite an old order.
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <h3>Business rules</h3>
+        <ul>
+          <li>
+            <strong>Account ownership:</strong> shopping is for signed-in customers. Staff can
+            inspect inventory but cannot use customer carts or orders. A cart belongs to the
+            signed-in account; the API does not accept an owner ID. Another customer's order and a
+            nonexistent order both return 404.
+          </li>
+          <li>
+            <strong>Totals:</strong> the server calculates each line as quantity × current unit
+            price and adds those lines. Amounts are integer EUR cents in the API, formatted as EUR
+            in the UI. No shipping fee, discount, or additional tax is added in this demo. A client
+            cannot supply its own prices, totals, or order status.
+          </li>
+          <li>
+            <strong>Limits:</strong> 1–99 whole units per product, no more than available stock when
+            adding or updating, and up to 50 different products. Blank, fractional, negative,
+            string, and excessive quantities are rejected. Remove uses its own operation.
+          </li>
+          <li>
+            <strong>No reservation:</strong> adding, updating, and removing cart lines do not change
+            stock. Two customers may have the same units in their carts. Availability is checked
+            again at placement; there is no promise of stock before then.
+          </li>
+          <li>
+            <strong>Price changes:</strong> cart reads use current catalog prices and mark a price
+            that differs from when the line was first added. The customer reviews the current total.
+            If any price changes after that review, Place order returns 409 PRICE_CHANGED and
+            creates no order. Refresh and review the new amount before trying again, even for a
+            price decrease.
+          </li>
+          <li>
+            <strong>Stock changes:</strong> a reduction that still covers the requested quantity
+            permits placement. Insufficient stock returns 409 STOCK_CHANGED, creates no order,
+            changes no stock, and leaves the cart available for correction. The customer must reduce
+            the quantity or remove the item. Increasing stock never increases a cart quantity
+            automatically.
+          </li>
+          <li>
+            <strong>Atomic placement:</strong> all order lines, total, stock deductions, cart
+            clearing, and duplicate protection succeed together or none do. Stock cannot go below
+            zero. Refresh or reopen inventory to see changes after accepted orders; the original
+            seeded total of 323 units is only the reset starting value.
+          </li>
+          <li>
+            <strong>Status:</strong> Placed means the order was accepted and stock was deducted
+            once. It does not mean paid, shipped, or delivered. There are no cancellation, refund,
+            or status-change operations in increment 2.
+          </li>
+          <li>
+            <strong>Duplicate protection:</strong> the browser disables repeated submission. The
+            server also protects retries and two tabs ordering the same reviewed cart. A first
+            successful request returns 201; an exact replay returns 200 with the same order and no
+            second stock deduction. After another tab changes the cart, a stale review returns 409
+            CART_CHANGED.
+          </li>
+          <li>
+            <strong>Lost confirmation:</strong> if the response is lost, Retry order confirmation
+            resends the original attempt rather than creating another. This attempt survives a
+            reload in the same browser tab when session storage is available. My orders also lets
+            the customer check whether an order exists.
+          </li>
+        </ul>
+      </section>
+      <section>
+        <p class="page-label">INCREMENT 2 · API AND MANUAL QA</p>
+        <h2>Real cart and order APIs</h2>
+        <p>
+          All operations below require a customer session. Mutations also require the exact Origin
+          and a fresh X-CSRF-Token with its matching cookie. Swagger fills and refreshes the CSRF
+          header for POST, PATCH, and DELETE. Request bodies are limited to 16 KiB. All responses
+          use no-store and include X-Request-ID.
+        </p>
+        <table>
+          <thead>
+            <tr>
+              <th>Operation</th>
+              <th>Purpose and example</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>GET /api/cart</td>
+              <td>
+                Read your cart. Keep the returned version and checkoutToken for the reviewed prices.
+              </td>
+            </tr>
+            <tr>
+              <td>POST /api/cart/items</td>
+              <td>
+                Add units: {&quot;productId&quot;:&quot;arc-keyboard&quot;,&quot;quantity&quot;:2}.
+                Returns the current cart, with a subtotal of 25800 cents for two keyboards at the
+                starting price.
+              </td>
+            </tr>
+            <tr>
+              <td>PATCH /api/cart/items/arc-keyboard</td>
+              <td>
+                Replace the quantity: {&quot;quantity&quot;:3}. Requires a line in your own cart.
+              </td>
+            </tr>
+            <tr>
+              <td>DELETE /api/cart/items/arc-keyboard</td>
+              <td>Remove your line. Send no request body. A repeated removal returns 404.</td>
+            </tr>
+            <tr>
+              <td>POST /api/orders</td>
+              <td>
+                Send {&quot;cartVersion&quot;:the reviewed
+                version,&quot;checkoutToken&quot;:&quot;the actual returned token&quot;} and an
+                Idempotency-Key header containing a new UUID. Use the same key and body for retries.
+                Example Swagger tokens and order IDs are illustrative, not usable saved records.
+              </td>
+            </tr>
+            <tr>
+              <td>GET /api/orders</td>
+              <td>
+                Read only your orders. Optional page and pageSize (6, 12, or 24). Unknown or
+                repeated query parameters are rejected.
+              </td>
+            </tr>
+            <tr>
+              <td>GET /api/orders/{id}</td>
+              <td>
+                Read your own saved order. Another customer's order returns the same 404 as a
+                nonexistent order.
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <p>
+          Typical errors are 401 without a session; 403 for staff, invalid CSRF, or a wrong Origin;
+          404 for a missing line, product, or owned order; 422 for invalid input; and 409 for
+          insufficient stock, an empty or changed cart, a changed price, or a reused request key
+          with different details. Failed placement leaves all stock unchanged. Swagger includes
+          concrete success and error examples.
+        </p>
+        <h3>Useful independent checks</h3>
+        <ul>
+          <li>
+            Add from both catalog and details; add the same product twice; update and remove;
+            compare every UI subtotal and total with the API. Try zero, 100, a decimal, a string
+            quantity, an unknown product, a forged total, and an out-of-stock product.
+          </li>
+          <li>
+            Use the two customer accounts to check separate carts and histories. Try another
+            customer's order URL and API ID, a staff session, no session, a missing token, and a
+            wrong Origin on each mutation.
+          </li>
+          <li>
+            Place an order; verify its confirmation, empty cart, My orders entry, saved details, and
+            the exact stock reduction in catalog and staff inventory. Reloading confirmation must
+            not place another order.
+          </li>
+          <li>
+            Repeat the same placement request; reuse its key with a different body; place the same
+            reviewed cart concurrently from two tabs; and have two customers compete for the last
+            unit. Check both the order count and the final stock.
+          </li>
+          <li>
+            Change a price or stock after adding or reviewing the cart. Check the conflict message,
+            unchanged stock on rejection, corrected cart, successful new review, and immutable older
+            orders.
+          </li>
+          <li>
+            Check keyboard navigation, visible focus, accessible button names, mobile layout, API
+            errors, and recovery after a lost confirmation. Stable hooks include cart-item,
+            cart-line-total, cart-total, place-order, order-confirmation, order-number, order-row,
+            and order-item. Scope repeated hooks to their product or order.
+          </li>
+        </ul>
+        <h3>Reproduce price and stock changes locally</h3>
+        <p>
+          In a second CMD terminal in the application folder, run the following deliberate demo
+          change. It does not reset accounts or rewrite saved orders. It is a local command, not a
+          web endpoint, and is disabled in production. No rebuild is needed.
+        </p>
+        <pre><code>npm.cmd run demo:product -- --sku SR-101 --stock 1 --price-cents 13900</code></pre>
+        <p>
+          To restore that product's starting values for a new scenario, use the command below.
+          Restoring these values is an intentional stock edit; it does not cancel orders. Use the
+          full demo reset only when you intend to discard all carts, orders, and sessions and
+          generate new passwords.
+        </p>
+        <pre><code>npm.cmd run demo:product -- --sku SR-101 --stock 18 --price-cents 12900</code></pre>
+      </section>
+      <section>
+        <p class="page-label">RELEASE GUIDE · SECURITY</p>
+        <h2>Security and delivery checks</h2>
+        <p>
+          The application checks permissions on the server, stores protected passwords and sessions,
+          validates submitted values, limits login attempts, and rejects forged changes. Customer
+          responses exclude staff-only information. Error messages avoid exposing passwords or
+          internal failures. There are no deliberately introduced defects in this baseline.
+        </p>
+        <p>
+          The security baseline follows relevant OWASP ASVS guidance. This is a local demo with
+          fictional data; it has not received an independent penetration test or certification.
+          Local HTTP is restricted to this computer. Public hosting requires a separate HTTPS and
+          deployment review.
+        </p>
+        <h3>Earlier increment 1 developer verification</h3>
+        <ul>
+          <li>TypeScript checks and an optimized production build passed.</li>
+          <li>
+            Seventy temporary developer API checks passed against the requested local installation.
+            They covered authentication, validation, filtering, sorting with equal values,
+            pagination, staff permissions, session expiry, logout revocation, and login limits.
+          </li>
+          <li>
+            The dependency advisory check reported zero known advisories after updating the
+            validation library. This is a point-in-time check.
+          </li>
+          <li>
+            Browser checks covered customer sign-in, the catalog layout, combined filters, product
+            details, and the additional journeys recorded in the delivery verification note.
+          </li>
+        </ul>
+        <p>
+          These earlier development checks do not replace the learner's independent Playwright
+          suite. The learner reports 144 passing executions for increment 1. Current increment 2
+          developer verification is recorded in <span class="path">docs/VERIFICATION.md</span>.
+        </p>
+        <h3>Practices to carry into your framework</h3>
+        <p>
+          Use independent sessions and data, verify important outcomes, and keep tests readable. The
+          UI includes accessible roles and labels, selected test IDs, stable HTML IDs, and stable
+          classes. Repeated product cards and inventory rows give you opportunities to filter and
+          chain locators. A locator strategy should favour clarity and stability over unnecessary
+          complexity.
+        </p>
+        <h3>Local demo tradeoffs</h3>
+        <p>
+          Prepared accounts keep this release focused; real products normally need a reviewed
+          account lifecycle. The local database is suitable for this small training environment. Its
+          built-in SQLite interface is experimental in the installed Node runtime, so runtime and
+          database choices must be reviewed before production use. The local login limiter also
+          needs a different design for multiple application servers.
+        </p>
+        <h3>Restore the starting data</h3>
+        <p>
+          Stop Stockroom and run <code>npm.cmd run demo:reset</code> from its application folder.
+          This deletes all carts and orders, recreates the fictional data, invalidates sessions,
+          clears login limits, and generates new passwords in the local account file. Restart the
+          application afterwards. Use this only when you intend to discard the current demo state.
+        </p>
+        <h3>Next increments</h3>
+        <p>
+          Increment 3 starts only after increment 2 has been independently tested. It will introduce
+          a local payment simulator with controllable success, decline, and pending outcomes, retry
+          without a duplicate order, server-confirmed results, and safe handling of late or
+          duplicate notifications. A later Stripe sandbox integration will use test keys and test
+          payment methods only, with no real-money transactions. Payment states and reservation
+          rules need their own release entry before implementation; this release keeps the single
+          Placed state. Existing increment 2 orders will not silently become paid or be charged
+          retroactively.
+        </p>
+        <p class="small">
+          Security reference:
+          <a href="https://asvs.owasp.org/">OWASP Application Security Verification Standard</a>.
+          Technical startup and maintenance details are in the application README. Use your
+          browser's Print command to print this guide or save it as PDF.
+        </p>
+      </section>
+    </main>
+  </body>
+</html>

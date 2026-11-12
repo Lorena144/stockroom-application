@@ -1,0 +1,14 @@
+node_modules/
+.next/
+out/
+dist/
+.env*
+!.env.example
+.local/
+var/
+public/swagger/
+public/release-guide.html
+*.tsbuildinfo
+*.log
+.sites-runtime/
+.openai/

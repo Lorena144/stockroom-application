@@ -1,0 +1,434 @@
+[
+  {
+    "id": "arc-keyboard",
+    "sku": "SR-101",
+    "name": "Arc mechanical keyboard",
+    "category": "Accessories",
+    "priceCents": 12900,
+    "stock": 18,
+    "art": "keyboard",
+    "color": "sage",
+    "description": "A quieter kind of productivity. A compact mechanical keyboard with a satisfying feel and a clean desk footprint.",
+    "specs": {
+      "Layout": "75 percent ANSI",
+      "Connection": "USB C and Bluetooth",
+      "Switches": "Silent tactile"
+    },
+    "costCents": 7740,
+    "supplier": "Northline Distribution"
+  },
+  {
+    "id": "beam-desk-lamp",
+    "sku": "SR-102",
+    "name": "Beam desk lamp",
+    "category": "Workspace",
+    "priceCents": 6900,
+    "stock": 4,
+    "art": "lamp",
+    "color": "sand",
+    "description": "A focused pool of warm light, adjustable for early starts and late ideas.",
+    "specs": {
+      "Light": "Adjustable LED",
+      "Material": "Powder coated aluminium",
+      "Power": "USB C"
+    },
+    "costCents": 4140,
+    "supplier": "Form Supply Co"
+  },
+  {
+    "id": "canvas-desk-mat",
+    "sku": "SR-103",
+    "name": "Canvas desk mat",
+    "category": "Workspace",
+    "priceCents": 2900,
+    "stock": 30,
+    "art": "mat",
+    "color": "clay",
+    "description": "A soft landing for your everyday tools. Made to keep your workspace feeling considered.",
+    "specs": {
+      "Size": "80 by 40 cm",
+      "Material": "Recycled felt",
+      "Care": "Wipe clean"
+    },
+    "costCents": 1740,
+    "supplier": "Form Supply Co"
+  },
+  {
+    "id": "clarity-webcam",
+    "sku": "SR-104",
+    "name": "Clarity webcam",
+    "category": "Accessories",
+    "priceCents": 8900,
+    "stock": 0,
+    "art": "camera",
+    "color": "slate",
+    "description": "Look sharp in every conversation with crisp detail and a physical privacy cover.",
+    "specs": {
+      "Resolution": "1080p",
+      "Connection": "USB C",
+      "Privacy": "Physical shutter"
+    },
+    "costCents": 5340,
+    "supplier": "Northline Distribution"
+  },
+  {
+    "id": "contour-mouse",
+    "sku": "SR-105",
+    "name": "Contour wireless mouse",
+    "category": "Accessories",
+    "priceCents": 5900,
+    "stock": 24,
+    "art": "mouse",
+    "color": "sage",
+    "description": "Comfort that follows your hand. Quiet clicks and precise control for a full workday.",
+    "specs": {
+      "Connection": "Bluetooth",
+      "Battery": "Rechargeable",
+      "Sensitivity": "Up to 4000 DPI"
+    },
+    "costCents": 3540,
+    "supplier": "Northline Distribution"
+  },
+  {
+    "id": "dock-usb-hub",
+    "sku": "SR-106",
+    "name": "Dock USB C hub",
+    "category": "Accessories",
+    "priceCents": 7900,
+    "stock": 5,
+    "art": "hub",
+    "color": "sand",
+    "description": "One small hub for a more connected desk. Add the ports your work needs.",
+    "specs": {
+      "Ports": "HDMI and 3 USB",
+      "Charging": "100 W pass through",
+      "Cable": "18 cm"
+    },
+    "costCents": 4740,
+    "supplier": "Northline Distribution"
+  },
+  {
+    "id": "echo-headphones",
+    "sku": "SR-107",
+    "name": "Echo studio headphones",
+    "category": "Audio",
+    "priceCents": 14900,
+    "stock": 12,
+    "art": "headphones",
+    "color": "sage",
+    "description": "Room to concentrate. Comfortable over ear headphones with balanced, detailed sound.",
+    "specs": {
+      "Type": "Over ear",
+      "Connection": "Bluetooth and wired",
+      "Battery": "40 hours"
+    },
+    "costCents": 8940,
+    "supplier": "Northline Distribution"
+  },
+  {
+    "id": "folio-laptop",
+    "sku": "SR-108",
+    "name": "Folio everyday laptop",
+    "category": "Computers",
+    "priceCents": 89900,
+    "stock": 8,
+    "art": "laptop",
+    "color": "sand",
+    "description": "Built for the everyday work that matters. Portable, capable, and pleasantly simple.",
+    "specs": {
+      "Display": "14 inch",
+      "Memory": "16 GB",
+      "Storage": "512 GB SSD"
+    },
+    "costCents": 53940,
+    "supplier": "Northline Distribution"
+  },
+  {
+    "id": "frame-monitor",
+    "sku": "SR-109",
+    "name": "Frame 27 inch monitor",
+    "category": "Displays",
+    "priceCents": 27900,
+    "stock": 9,
+    "art": "monitor",
+    "color": "slate",
+    "description": "Give your ideas more space. A clear, generous display with a beautifully restrained frame.",
+    "specs": {
+      "Size": "27 inch",
+      "Resolution": "2560 by 1440",
+      "Connection": "HDMI and USB C"
+    },
+    "costCents": 16740,
+    "supplier": "Northline Distribution"
+  },
+  {
+    "id": "glide-mouse-pad",
+    "sku": "SR-110",
+    "name": "Glide mouse pad",
+    "category": "Workspace",
+    "priceCents": 1900,
+    "stock": 40,
+    "art": "mat",
+    "color": "sage",
+    "description": "A smooth surface for precise movements, with a base that stays put.",
+    "specs": {
+      "Size": "30 by 25 cm",
+      "Material": "Woven fabric",
+      "Base": "Natural rubber"
+    },
+    "costCents": 1140,
+    "supplier": "Form Supply Co"
+  },
+  {
+    "id": "haven-laptop-stand",
+    "sku": "SR-111",
+    "name": "Haven laptop stand",
+    "category": "Workspace",
+    "priceCents": 5900,
+    "stock": 3,
+    "art": "stand",
+    "color": "sand",
+    "description": "Bring your screen to a comfortable height and make room for clearer thinking.",
+    "specs": {
+      "Material": "Aluminium",
+      "Compatibility": "11 to 16 inch laptops",
+      "Design": "Foldable"
+    },
+    "costCents": 3540,
+    "supplier": "Form Supply Co"
+  },
+  {
+    "id": "horizon-ultrawide",
+    "sku": "SR-112",
+    "name": "Horizon ultrawide monitor",
+    "category": "Displays",
+    "priceCents": 49900,
+    "stock": 0,
+    "art": "monitor",
+    "color": "clay",
+    "description": "A wider perspective for projects that need room to breathe.",
+    "specs": {
+      "Size": "34 inch",
+      "Resolution": "3440 by 1440",
+      "Refresh": "100 Hz"
+    },
+    "costCents": 29940,
+    "supplier": "Northline Distribution"
+  },
+  {
+    "id": "island-speaker",
+    "sku": "SR-113",
+    "name": "Island desktop speaker",
+    "category": "Audio",
+    "priceCents": 9900,
+    "stock": 14,
+    "art": "speaker",
+    "color": "sand",
+    "description": "Warm, room filling sound in a compact form that belongs on your desk.",
+    "specs": {
+      "Connection": "Bluetooth and USB",
+      "Power": "20 W",
+      "Controls": "Physical volume dial"
+    },
+    "costCents": 5940,
+    "supplier": "Northline Distribution"
+  },
+  {
+    "id": "junction-cable",
+    "sku": "SR-114",
+    "name": "Junction USB C cable",
+    "category": "Accessories",
+    "priceCents": 1900,
+    "stock": 55,
+    "art": "cable",
+    "color": "clay",
+    "description": "A dependable everyday connection, finished with a flexible woven sleeve.",
+    "specs": {
+      "Length": "2 metres",
+      "Charging": "100 W",
+      "Finish": "Braided"
+    },
+    "costCents": 1140,
+    "supplier": "Northline Distribution"
+  },
+  {
+    "id": "keystone-mini-pc",
+    "sku": "SR-115",
+    "name": "Keystone mini computer",
+    "category": "Computers",
+    "priceCents": 54900,
+    "stock": 6,
+    "art": "hub",
+    "color": "slate",
+    "description": "A small footprint with room for big ideas. An everyday desktop that fits almost anywhere.",
+    "specs": {
+      "Memory": "16 GB",
+      "Storage": "512 GB SSD",
+      "Ports": "USB C and HDMI"
+    },
+    "costCents": 32940,
+    "supplier": "Northline Distribution"
+  },
+  {
+    "id": "line-monitor-arm",
+    "sku": "SR-116",
+    "name": "Line monitor arm",
+    "category": "Workspace",
+    "priceCents": 9900,
+    "stock": 11,
+    "art": "stand",
+    "color": "sage",
+    "description": "Move your display where you need it and reclaim a little more desk space.",
+    "specs": {
+      "Support": "Up to 9 kg",
+      "Mount": "Desk clamp",
+      "Compatibility": "VESA 75 and 100"
+    },
+    "costCents": 5940,
+    "supplier": "Form Supply Co"
+  },
+  {
+    "id": "mesa-portable-display",
+    "sku": "SR-117",
+    "name": "Mesa portable display",
+    "category": "Displays",
+    "priceCents": 19900,
+    "stock": 2,
+    "art": "monitor",
+    "color": "sand",
+    "description": "A second screen that travels lightly, from your home desk to your next stop.",
+    "specs": {
+      "Size": "15.6 inch",
+      "Resolution": "1920 by 1080",
+      "Connection": "USB C"
+    },
+    "costCents": 11940,
+    "supplier": "Northline Distribution"
+  },
+  {
+    "id": "nest-earbuds",
+    "sku": "SR-118",
+    "name": "Nest wireless earbuds",
+    "category": "Audio",
+    "priceCents": 8900,
+    "stock": 22,
+    "art": "headphones",
+    "color": "clay",
+    "description": "Everyday listening, without the distractions. Light, comfortable, and easy to carry.",
+    "specs": {
+      "Battery": "6 hours plus case",
+      "Connection": "Bluetooth",
+      "Case": "USB C charging"
+    },
+    "costCents": 5340,
+    "supplier": "Northline Distribution"
+  },
+  {
+    "id": "orbit-trackpad",
+    "sku": "SR-119",
+    "name": "Orbit wireless trackpad",
+    "category": "Accessories",
+    "priceCents": 10900,
+    "stock": 7,
+    "art": "mat",
+    "color": "slate",
+    "description": "More room for gestures and a natural way to move through your work.",
+    "specs": {
+      "Surface": "Glass",
+      "Connection": "Bluetooth",
+      "Battery": "Rechargeable"
+    },
+    "costCents": 6540,
+    "supplier": "Northline Distribution"
+  },
+  {
+    "id": "pivot-task-light",
+    "sku": "SR-120",
+    "name": "Pivot task light",
+    "category": "Workspace",
+    "priceCents": 7900,
+    "stock": 0,
+    "art": "lamp",
+    "color": "sage",
+    "description": "Direct light exactly where you want it with a flexible, adjustable arm.",
+    "specs": {
+      "Light": "Dimmable LED",
+      "Mount": "Desk base",
+      "Temperature": "Warm to cool white"
+    },
+    "costCents": 4740,
+    "supplier": "Form Supply Co"
+  },
+  {
+    "id": "quiet-microphone",
+    "sku": "SR-121",
+    "name": "Quiet USB microphone",
+    "category": "Audio",
+    "priceCents": 12900,
+    "stock": 5,
+    "art": "microphone",
+    "color": "slate",
+    "description": "A clearer voice for meetings, recordings, and the things you want to share.",
+    "specs": {
+      "Connection": "USB C",
+      "Pattern": "Cardioid",
+      "Controls": "Mute and gain"
+    },
+    "costCents": 7740,
+    "supplier": "Northline Distribution"
+  },
+  {
+    "id": "rise-work-laptop",
+    "sku": "SR-122",
+    "name": "Rise work laptop",
+    "category": "Computers",
+    "priceCents": 119900,
+    "stock": 4,
+    "art": "laptop",
+    "color": "slate",
+    "description": "Extra headroom for ambitious work, in a portable and considered design.",
+    "specs": {
+      "Display": "15 inch",
+      "Memory": "32 GB",
+      "Storage": "1 TB SSD"
+    },
+    "costCents": 71940,
+    "supplier": "Northline Distribution"
+  },
+  {
+    "id": "slate-numeric-pad",
+    "sku": "SR-123",
+    "name": "Slate numeric pad",
+    "category": "Accessories",
+    "priceCents": 3900,
+    "stock": 16,
+    "art": "keyboard",
+    "color": "clay",
+    "description": "A compact companion for working with numbers, built to sit comfortably beside your keyboard.",
+    "specs": {
+      "Layout": "21 keys",
+      "Connection": "USB C",
+      "Switches": "Low profile"
+    },
+    "costCents": 2340,
+    "supplier": "Northline Distribution"
+  },
+  {
+    "id": "tide-charging-pad",
+    "sku": "SR-124",
+    "name": "Tide charging pad",
+    "category": "Accessories",
+    "priceCents": 3900,
+    "stock": 28,
+    "art": "mouse",
+    "color": "sand",
+    "description": "A simple place to set your phone and recharge through the day.",
+    "specs": {
+      "Charging": "15 W wireless",
+      "Input": "USB C",
+      "Surface": "Soft touch"
+    },
+    "costCents": 2340,
+    "supplier": "Northline Distribution"
+  }
+]
