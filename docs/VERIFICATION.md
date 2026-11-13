@@ -4,6 +4,19 @@ Date: 12 November 2026. Version: 0.2.0. Application: the Stockroom application r
 
 Status: developer verification completed; ready for the learner's independent increment 2 testing. Increment 3 is not implemented. The learner reports 144 passing UI, API, and hybrid executions and a published framework for increment 1; those are separate from the checks below.
 
+## CI account provisioning — 13 November 2026
+
+- With `CI=true`, fresh setup uses `CUSTOMER_PASSWORD` and `STAFF_PASSWORD` from the
+  environment for the first customer and staff accounts. Local setup and the second
+  customer continue to use generated passwords.
+- Ten isolated setup scenarios containing 45 checks passed using temporary databases:
+  local generation, CI password hashing, repeated setup with existing accounts and cart
+  data, missing passwords, invalid passwords, and the production guard.
+- Missing or invalid CI passwords are rejected before local configuration or database
+  creation. Setup output did not contain the supplied CI passwords.
+- The verification used disposable credentials and databases, then removed the
+  temporary files. The working installation's accounts and data were not used.
+
 ## Build and upgrade
 
 - TypeScript checking and the optimized production build passed after the final UI readiness change.

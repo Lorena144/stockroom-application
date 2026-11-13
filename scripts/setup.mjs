@@ -8,6 +8,26 @@ if (process.env.NODE_ENV === 'production')
   throw new Error('Demo setup and reset are disabled in production.');
 if (reset && !process.argv.includes('--confirm-reset'))
   throw new Error('Reset requires --confirm-reset.');
+const ciPasswords = new Map();
+if (process.env.CI === 'true') {
+  for (const [accountId, variableName] of [
+    ['usr-customer-01', 'CUSTOMER_PASSWORD'],
+    ['usr-staff-01', 'STAFF_PASSWORD'],
+  ]) {
+    const password = process.env[variableName];
+    if (!password) throw new Error(`Missing CI environment variable: ${variableName}`);
+    if (
+      password.length < 16 ||
+      password.length > 128 ||
+      !password.trim() ||
+      /[\r\n]/.test(password)
+    )
+      throw new Error(
+        `Invalid ${variableName}: use a nonblank, single-line password of 16-128 characters.`,
+      );
+    ciPasswords.set(accountId, password);
+  }
+}
 if (!existsSync('.env.local'))
   writeFileSync(
     '.env.local',
@@ -75,7 +95,7 @@ try {
     'INSERT INTO users(id,email,name,role,password_hash) VALUES(?,?,?,?,?)',
   );
   for (const account of accounts) {
-    const password = randomBytes(18).toString('base64url');
+    const password = ciPasswords.get(account.id) ?? randomBytes(18).toString('base64url');
     const salt = randomBytes(16).toString('hex');
     const hash = scryptSync(password, salt, 64, {
       N: 131072,

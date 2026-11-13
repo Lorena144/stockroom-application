@@ -33,6 +33,13 @@ After updating the source, stop the server and repeat `npm ci`, `npm run setup` 
 
 Use `127.0.0.1` consistently; `localhost` is a different browser origin.
 
+## CI demo accounts
+
+When `CI=true`, a fresh setup requires `CUSTOMER_PASSWORD` and `STAFF_PASSWORD`
+from the CI environment. Each must be a nonblank, single-line password of 16-128 characters.
+They configure `customer@stockroom.test` and `staff@stockroom.test`; the second customer
+keeps a generated password. Local setup generates passwords, and existing accounts are preserved.
+
 ## Documentation
 
 - [Release guide and business rules](docs/Stockroom%20Release%20Guide.html)
